@@ -11,11 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from guacamoleb device
 $(call inherit-product, device/oneplus/guacamoleb/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+# Inherit some common VoltageOS stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_guacamoleb
+PRODUCT_NAME := voltage_guacamoleb
 PRODUCT_DEVICE := guacamoleb
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := GM1905
@@ -39,3 +39,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_NAME=OnePlus7
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+
+VOLTAGE_BUILD_TYPE = OFFICIAL
+
+# UDFPS animations
+EXTRA_UDFPS_ANIMATIONS := true
